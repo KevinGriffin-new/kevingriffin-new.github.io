@@ -1,6 +1,7 @@
 lsi: false
 safe: true
 source: https://github.com/KevinGriffin-new/kevingriffin-new.github.io/
+theme: architect
 incremental: false
 highlighter: rouge
 gist:
