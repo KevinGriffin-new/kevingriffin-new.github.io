@@ -1,7 +1,9 @@
 lsi: false
 safe: true
 source: https://github.com/KevinGriffin-new/kevingriffin-new.github.io/
-theme: architect
+theme:  jekyll-theme-minimal
+title:  Testing Jekyll themes and github pages
+description: test page
 incremental: false
 highlighter: rouge
 gist:
