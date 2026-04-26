@@ -1,26 +1,23 @@
 ---
-layout: default
 title: Kevin Griffin
-description: Surveys, Sensors & Systems — geomatics, drones, electronics, code.
+type: page
+summary: Surveys, Sensors & Systems — geomatics, drones, electronics, and code.
 ---
 
-# Kevin Griffin
-
-**Surveys, Sensors & Systems**
-
-*Intersections and integrations of odd problems.*
+<p class="tagline">Surveys, Sensors &amp; Systems</p>
+<p class="sub">Intersections and integrations of odd problems.</p>
 
 I work where geomatics, robotics, and electronics meet — the kind of jobs that need a survey crew, a soldering iron, and a few thousand lines of code in roughly equal measure.
 
 ## What I work on
 
-**Geomatics.** Field surveys, GNSS, lidar, photogrammetry — turning sites into data and data into something a builder, planner, or scientist can act on.
+<p class="field"><strong>Geomatics.</strong> Field surveys, GNSS, lidar, photogrammetry — turning sites into data and data into something a builder, planner, or scientist can act on.</p>
 
-**Drone design — aquatic and aerial.** Custom airframes and ROV / USV platforms built to be **affordable, accessible, and repairable**. Usually sensor-carrying: bathymetry, mapping, inspection.
+<p class="field"><strong>Drone design — aquatic and aerial.</strong> Custom airframes and ROV / USV platforms built to be <em>affordable, accessible, and repairable</em>. Usually sensor-carrying: bathymetry, mapping, inspection.</p>
 
-**Electronics.** Bench-built sensor boards, power, and comms — for systems that have to keep working in cold rain, hot sun, and salt water.
+<p class="field"><strong>Electronics.</strong> Bench-built sensor boards, power, and comms — for systems that have to keep working in cold rain, hot sun, and salt water.</p>
 
-**Computing.** Code to drive the sensors and arrange the captures, plus enough post-processing to make the bits digestible. Firmware on the boards, scripts in the field. A weakness for Lisp.
+<p class="field"><strong>Computing.</strong> Code to drive the sensors and arrange the captures, plus enough post-processing to make the bits digestible. Firmware on the boards, scripts in the field. A weakness for Lisp.</p>
 
 ## Approach
 
@@ -35,4 +32,4 @@ If we're going to spend the next decade instrumenting rivers, coastlines, forest
 
 ---
 
-<small>Built with [Jekyll](https://jekyllrb.com/), generated via [Collards](https://blog.kingcons.io/posts/announcing-collards.html).</small>
+<small>Generated with <a href="https://collards.kingcons.io/">Collards</a>.</small>

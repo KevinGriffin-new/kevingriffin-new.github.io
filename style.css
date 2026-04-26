@@ -1,0 +1,102 @@
+/* Kevin Griffin — kevingriffin-new.github.io
+ * Styling sized to ride on top of Collards' default Spinneret templates.
+ * Body content lives inside <main> with <hr> rules above and below;
+ * Collards may also emit nav and footer wrappers around it.
+ */
+
+:root {
+  --ink:    #1a1a1a;
+  --muted:  #5a5a5a;
+  --rule:   #d6d2c4;
+  --accent: #2a5d3a;
+  --bg:     #faf7f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:    #e8e6df;
+    --muted:  #9a958a;
+    --rule:   #3a3833;
+    --accent: #7fb88f;
+    --bg:     #15140f;
+  }
+}
+
+html, body { background: var(--bg); color: var(--ink); }
+
+body {
+  font-family: ui-serif, Georgia, "Iowan Old Style", Cambria, serif;
+  max-width: 38rem;
+  margin: 4rem auto;
+  padding: 0 1.25rem;
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+main { display: block; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 1.5rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 .25rem;
+  letter-spacing: -.01em;
+}
+
+h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .35rem;
+  margin: 2.25rem 0 1rem;
+}
+
+p { margin: 0 0 1rem; }
+
+p.tagline {
+  font-weight: 600;
+  margin: 0 0 .25rem;
+}
+
+p.sub {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 1.75rem;
+}
+
+p.field { margin-bottom: 1rem; }
+p.field strong { color: var(--accent); }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+ul li { margin: .25rem 0; }
+
+small { color: var(--muted); font-size: .85rem; }
+
+/* Collards default templates emit a top nav with site title; tone it down */
+body > nav ul,
+#content > nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: .9rem;
+}
