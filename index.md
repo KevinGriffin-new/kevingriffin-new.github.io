@@ -1,7 +1,6 @@
 ---
 title: Kevin Griffin
 type: page
-summary: Surveys, Sensors & Systems — geomatics, drones, electronics, and code.
 ---
 
 <p class="tagline">Surveys, Sensors &amp; Systems</p>
