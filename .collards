@@ -9,4 +9,7 @@
 (:author "Kevin Griffin"
  :domain "kevingriffin-new.github.io"
  :title "Kevin Griffin — Surveys, Sensors & Systems"
- :repo-url "https://github.com/KevinGriffin-new/kevingriffin-new.github.io")
+ :repo-url "https://github.com/KevinGriffin-new/kevingriffin-new.github.io"
+ ;; .git/assets/build/init and hidden FILES are ignored automatically, but
+ ;; not hidden directories — so exclude .github (workflows + README) explicitly.
+ :ignored (".github"))

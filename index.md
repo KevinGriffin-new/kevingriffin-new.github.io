@@ -1,6 +1,7 @@
 ---
 title: Kevin Griffin
 type: page
+slug: index
 ---
 
 <p class="tagline">Surveys, Sensors &amp; Systems</p>
