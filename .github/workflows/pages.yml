@@ -1,0 +1,82 @@
+name: Build and deploy (Collards)
+
+# Builds the site with Collards (a Common Lisp static site generator) and
+# publishes the output to GitHub Pages. Push Markdown + .collards; CI does the
+# rest. The deploy step only runs on `main`, so pushing the working branch
+# validates the build without touching the live site.
+
+on:
+  push:
+    branches: [main, collards-ci]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+        with:
+          path: site
+
+      - name: Install SBCL + build tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends sbcl make build-essential libyaml-dev
+
+      - name: Install Quicklisp
+        run: |
+          curl -sSLO https://beta.quicklisp.org/quicklisp.lisp
+          sbcl --non-interactive \
+               --eval '(load "quicklisp.lisp")' \
+               --eval '(quicklisp-quickstart:install)'
+          mkdir -p "$HOME/quicklisp/local-projects"
+
+      - name: Fetch and build Collards
+        run: |
+          git clone --depth 1 https://git.sr.ht/~kingcons/collards
+          ln -sf "$PWD/collards" "$HOME/quicklisp/local-projects/collards"
+          sbcl --non-interactive \
+               --eval '(load (merge-pathnames "quicklisp/setup.lisp" (user-homedir-pathname)))' \
+               --eval '(ql:quickload :collards)' \
+               --eval '(asdf:make :collards)'
+          test -x collards/bin/collards
+
+      - name: Build site
+        run: ./collards/bin/collards build --site "$GITHUB_WORKSPACE/site" --timing
+
+      - name: Show build output
+        run: ls -lR site/build
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

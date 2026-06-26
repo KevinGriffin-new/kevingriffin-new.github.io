@@ -1,0 +1,6 @@
+# Keep LF endings for everything the Linux CI build touches, so shell steps
+# and the Collards config parse correctly regardless of contributor OS.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.mp4 binary
