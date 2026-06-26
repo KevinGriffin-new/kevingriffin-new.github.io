@@ -1,0 +1,15 @@
+;; Site configuration for kevingriffin-new.github.io
+;; Static site built by Collards (https://collards.kingcons.io) and
+;; deployed to GitHub Pages by .github/workflows/pages.yml.
+;;
+;; :domain is used to resolve asset URLs (e.g. asset:default.css ->
+;; https://kevingriffin-new.github.io/assets/default.css), so it must
+;; match the published Pages host exactly.
+
+(:author "Kevin Griffin"
+ :domain "kevingriffin-new.github.io"
+ :title "Kevin Griffin — Surveys, Sensors & Systems"
+ :repo-url "https://github.com/KevinGriffin-new/kevingriffin-new.github.io"
+ ;; .git/assets/build/init and hidden FILES are ignored automatically, but
+ ;; not hidden directories — so exclude .github (workflows + README) explicitly.
+ :ignored (".github"))
