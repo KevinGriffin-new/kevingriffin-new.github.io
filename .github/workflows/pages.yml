@@ -60,6 +60,15 @@ jobs:
         # segment as a filename and searches the parent instead.
         run: ./collards/bin/collards build --site "$GITHUB_WORKSPACE/site/" --timing
 
+      - name: Materialize symlinked dirs (Collards symlinks asset dirs; Pages won't serve symlinks)
+        run: |
+          cd site/build
+          for link in $(find . -maxdepth 1 -type l); do
+            target="$(readlink -f "$link")"
+            rm "$link"
+            cp -rL "$target" "$link"
+          done
+
       - name: Show build output
         run: ls -lR site/build
 
