@@ -55,7 +55,10 @@ jobs:
           test -x collards/bin/collards
 
       - name: Build site
-        run: ./collards/bin/collards build --site "$GITHUB_WORKSPACE/site" --timing
+        # Trailing slash is required: Collards' find-root-dir runs the path
+        # through directory-namestring, which treats a slash-less final
+        # segment as a filename and searches the parent instead.
+        run: ./collards/bin/collards build --site "$GITHUB_WORKSPACE/site/" --timing
 
       - name: Show build output
         run: ls -lR site/build
