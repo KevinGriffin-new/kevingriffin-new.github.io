@@ -7,7 +7,7 @@ slug: index
 <p class="tagline">Surveys, Sensors &amp; Systems</p>
 <p class="sub">Intersections and integrations of odd problems.</p>
 
-I work where geomatics, robotics, and electronics meet — the kind of jobs that need a survey crew, a soldering iron, and a few thousand lines of code in roughly equal measure.
+I work where geomatics, robotics, and electronics meet — the kind of jobs that need a survey crew, a soldering iron, and a few thousand lines of code.
 
 ## What I work on
 
@@ -27,9 +27,9 @@ small crew — or a citizen scientist — to actually use.
 
 <p class="field"><strong><a href="https://github.com/KevinGriffin-new/opencad-landsurvey-plugin">OpenCAD LandSurvey plugin</a></strong> — a land-survey add-on for Open CAD Studio, written in Rust as a native plugin: survey points, PNEZD import/export, COGO, and recognized-plan import. The survey toolbox most people pay four figures a seat for, as a free, listed extension.</p>
 
-<p class="field"><strong><a href="https://github.com/KevinGriffin-new/plat2json">plat2json</a></strong> — turns a survey-plat PDF into structured plan-JSON geometry that CAD tools (including the LandSurvey plugin) can ingest. The unglamorous, genuinely hard middle step between a published plan and a working drawing.</p>
+<p class="field"><strong><a href="https://github.com/KevinGriffin-new/plat2json">plat2json</a></strong> — turns a survey-plat PDF into structured plan-JSON geometry that CAD tools (including the LandSurvey plugin) can ingest. A middle step between a published plan and a working drawing.</p>
 
-<p class="field"><strong><a href="https://github.com/KevinGriffin-new/shoalkit">shoalkit</a></strong> — a linear and Stokes wave-transformation calculator with theory gating, wrapped so the results are citable rather than black-box. Coastal numbers you can put your name next to.</p>
+<p class="field"><strong><a href="https://github.com/KevinGriffin-new/shoalkit">shoalkit</a></strong> — a linear and Stokes wave-transformation calculator with theory gating, wrapped so the results are citable rather than black-box.</p>
 
 <p class="field"><strong><a href="https://github.com/KevinGriffin-new/geom2120-trainer">geom2120-trainer</a></strong> — a gamified, single-file study trainer for survey computations, using backward-chained step drills. Built to teach the math by making you walk every step, not just trust the answer.</p>
 
